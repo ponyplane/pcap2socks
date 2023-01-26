@@ -169,7 +169,7 @@ pub fn interfaces() -> Vec<Interface> {
                 .ips
                 .iter()
                 .map(|ip| match ip {
-                    ipnetwork::IpNetwork::V4(ref ipv4) => Ok(ipv4.ip()),
+                    pnet::ipnetwork::IpNetwork::V4(ref ipv4) => Ok(ipv4.ip()),
                     _ => Err(()),
                 })
                 .filter_map(Result::ok)
